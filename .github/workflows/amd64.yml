@@ -15,11 +15,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-     - name: Configure Docker to support v1 image format
-      run: |
-        sudo mkdir -p /etc/docker
-        echo '{ "image-format": "v1-compat" }' | sudo tee /etc/docker/daemon.json
-        sudo systemctl restart docker
 
     - name: Clean up Docker to free space
       run: |
